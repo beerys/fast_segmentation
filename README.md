@@ -21,8 +21,8 @@ conda activate torchgeo
   - `python create_mask_from_annotations.py --input-fn data/labels/demo_annotations_epsg32616.geojson --target-fn data/imagery/16_pre_imagery_cropped.tif --output-dir data/masks/ --overwrite`
   - NOTE: `create_mask_from_annotations.py` will need to be edited with the class names used in the web-tool
 - Buffer the masks
-  - Run `Apply distance buffer to mask.ipynb`
+  -  `python apply_distance_buffer_to_mask.py --input_path=/path/to/input/mask --output_path=/path/to/output/mask`
 - Train models
-  - Run `Train.ipynb`
+  - `python train.py`
 - Inference
   - `python inference.py --input-model-checkpoint output/runs/unet-resnet18-imagenet-lr_0.001/last.ckpt --input-image-fn data/imagery/16_pre_imagery_cropped.tif --output-dir predictions/unet-resnet18-imagenet-lr_0.001/ --overwrite --gpu 1`
