@@ -62,7 +62,7 @@ trainer_args = {
     "callbacks": [checkpoint_callback, early_stopping_callback],
     "logger": tb_logger,
     "default_root_dir": experiment_dir,
-    "max_epochs": 1,
+    "max_epochs": 15,
 }
 
 trainer = pl.Trainer(**trainer_args)
