@@ -16,7 +16,7 @@ conda activate torchgeo
 
 - Upload geojson labels to `data/labels/`
 - Convert labels from EPSG:4326 (lat/lon) to the coordinate system (CRS) of the imagery, in this case, EPSG:32616
-  - `ogr2ogr -of GeoJSON -t_srs EPSG:32616 demo_annotations_epsg32616.geojson demo_annotations.geojson`
+  - `ogr2ogr -f GeoJSON -t_srs EPSG:32616 demo_annotations_epsg32616.geojson demo_annotations.geojson`
 - Create masks
   - `python create_mask_from_annotations.py --input-fn data/labels/demo_annotations_epsg32616.geojson --target-fn data/imagery/16_pre_imagery_cropped.tif --output-dir data/masks/ --overwrite`
   - NOTE: `create_mask_from_annotations.py` will need to be edited with the class names used in the web-tool
