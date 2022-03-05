@@ -15,7 +15,7 @@ image_fns = [
 ]
 
 mask_fns = [
-    "Labels_Cashew_05-06-02-02-BON-FEL_mask_buffered.tif",
+    "data/masks/RGB_05-06-02-02-BON-FEL_mask_no_shift.tif",
 ]
 
 dm = SegmentationDataModule(
@@ -40,7 +40,7 @@ task = SegmentationTask(
 
 log_dir = "output/logs/"
 output_dir = "output/runs/"
-experiment_name = "unet-resnet18-imagenet-lr_0.001_cashew"
+experiment_name = "unet-resnet18-imagenet-lr_0.001_cashew_shift"
 experiment_dir = os.path.join(output_dir, experiment_name)
 
 tb_logger = pl_loggers.TensorBoardLogger(log_dir, name=experiment_name)
